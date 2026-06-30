@@ -68,6 +68,11 @@
 }
 
 :root {
+  --navy: oklch(0.27 0.07 255);
+  --navy-deep: oklch(0.20 0.06 258);
+  --slate-pro: oklch(0.45 0.02 250);
+  --wa: oklch(0.68 0.17 152);
+  --wa-hover: oklch(0.62 0.17 152);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
