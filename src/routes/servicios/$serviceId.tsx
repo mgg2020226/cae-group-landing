@@ -84,7 +84,7 @@ function ServiceDetail() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.items.map((item) => (
+            {service.items.map((item: string) => (
               <div key={item} className="sub-service-card p-6 rounded-2xl flex items-start gap-4">
                 <div className="bg-brand-50 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
                   <i className="fa-solid fa-check-double text-brand-800" />
