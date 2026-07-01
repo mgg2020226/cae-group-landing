@@ -9,9 +9,9 @@ export type ContactInfo = {
 export const getContactInfo = createServerFn({ method: "GET" }).handler(
   async (): Promise<ContactInfo> => {
     return {
-      whatsapp: process.env.WHATSAPP_NUMBER ?? "573000000000",
+      whatsapp: process.env.WHATSAPP_NUMBER ?? "573001966177",
       email: process.env.CONTACT_EMAIL ?? "info@caegroup.com",
-      address: process.env.CONTACT_ADDRESS ?? "Bogotá, Colombia",
+      address: process.env.CONTACT_ADDRESS ?? "Barranquilla, Colombia",
     };
   },
 );
