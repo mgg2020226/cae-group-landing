@@ -180,11 +180,3 @@ export const services: Service[] = [
     ],
   },
 ];
-
-export const WHATSAPP = import.meta.env.VITE_WHATSAPP_NUMBER ?? "573000000000";
-export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? "info@caegroup.com";
-export const CONTACT_ADDRESS = import.meta.env.VITE_CONTACT_ADDRESS ?? "Bogotá, Colombia";
-
-export function waUrl(text: string) {
-  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
-}
