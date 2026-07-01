@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { services, waUrl, WHATSAPP, CONTACT_EMAIL, CONTACT_ADDRESS } from "../../lib/services-data";
+import { services } from "../../lib/services-data";
+import { useContact, buildWaUrl } from "../../lib/use-contact";
 import logo from "../../assets/logotipo-cae.png";
 
 export const Route = createFileRoute("/servicios/$serviceId")({
@@ -23,7 +24,10 @@ export const Route = createFileRoute("/servicios/$serviceId")({
 
 function ServiceDetail() {
   const service = Route.useLoaderData();
+  const contact = useContact();
+  const waUrl = (text: string) => buildWaUrl(contact.whatsapp, text);
   const waUrlService = waUrl(`Hola, quiero información sobre ${service.title}`);
+
 
   return (
     <div className="antialiased text-slate-800" style={{ backgroundColor: "#f8fafc" }}>
