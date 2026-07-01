@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { services, waUrl, WHATSAPP, CONTACT_EMAIL, CONTACT_ADDRESS } from "../../lib/services-data";
+import { services } from "../../lib/services-data";
+import { useContact, buildWaUrl } from "../../lib/use-contact";
 import logo from "../../assets/logotipo-cae.png";
 
 export const Route = createFileRoute("/servicios/$serviceId")({
@@ -23,7 +24,10 @@ export const Route = createFileRoute("/servicios/$serviceId")({
 
 function ServiceDetail() {
   const service = Route.useLoaderData();
+  const contact = useContact();
+  const waUrl = (text: string) => buildWaUrl(contact.whatsapp, text);
   const waUrlService = waUrl(`Hola, quiero información sobre ${service.title}`);
+
 
   return (
     <div className="antialiased text-slate-800" style={{ backgroundColor: "#f8fafc" }}>
@@ -80,7 +84,7 @@ function ServiceDetail() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.items.map((item) => (
+            {service.items.map((item: string) => (
               <div key={item} className="sub-service-card p-6 rounded-2xl flex items-start gap-4">
                 <div className="bg-brand-50 w-10 h-10 rounded-lg flex items-center justify-center shrink-0">
                   <i className="fa-solid fa-check-double text-brand-800" />
@@ -167,13 +171,13 @@ function ServiceDetail() {
             <h4 className="text-white font-bold mb-4">Contacto</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <i className="fa-solid fa-envelope w-5" /> {CONTACT_EMAIL}
+                <i className="fa-solid fa-envelope w-5" /> {contact.email}
               </li>
               <li>
-                <i className="fa-solid fa-phone w-5" /> +{WHATSAPP}
+                <i className="fa-solid fa-phone w-5" /> +{contact.whatsapp}
               </li>
               <li>
-                <i className="fa-solid fa-location-dot w-5" /> {CONTACT_ADDRESS}
+                <i className="fa-solid fa-location-dot w-5" /> {contact.address}
               </li>
             </ul>
           </div>

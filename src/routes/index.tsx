@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { services, waUrl, WHATSAPP, CONTACT_EMAIL, CONTACT_ADDRESS, type Service } from "../lib/services-data";
+import { services, type Service } from "../lib/services-data";
+import { useContact, buildWaUrl } from "../lib/use-contact";
 import logo from "../assets/logotipo-cae.png";
 
 export const Route = createFileRoute("/")({
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-const WA_URL = waUrl("Hola, quisiera solicitar una asesoría con CAE GROUP");
+
 
 function byId(id: string): Service {
   const s = services.find((s) => s.id === id);
@@ -182,6 +183,9 @@ const equipo: TeamMember[] = [
 ];
 
 function Landing() {
+  const contact = useContact();
+  const waUrl = (text: string) => buildWaUrl(contact.whatsapp, text);
+  const WA_URL = waUrl("Hola, quisiera solicitar una asesoría con CAE GROUP");
   const [serviceChoice, setServiceChoice] = useState("");
   const [companySize, setCompanySize] = useState("");
 
@@ -668,13 +672,13 @@ function Landing() {
             <h4 className="text-white font-bold mb-4">Contacto</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <i className="fa-solid fa-envelope w-5" /> {CONTACT_EMAIL}
+                <i className="fa-solid fa-envelope w-5" /> {contact.email}
               </li>
               <li>
-                <i className="fa-solid fa-phone w-5" /> +{WHATSAPP}
+                <i className="fa-solid fa-phone w-5" /> +{contact.whatsapp}
               </li>
               <li>
-                <i className="fa-solid fa-location-dot w-5" /> {CONTACT_ADDRESS}
+                <i className="fa-solid fa-location-dot w-5" /> {contact.address}
               </li>
             </ul>
           </div>
