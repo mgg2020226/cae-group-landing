@@ -64,15 +64,26 @@
   --color-slate-pro: var(--slate-pro);
   --color-wa: var(--wa);
   --color-wa-hover: var(--wa-hover);
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-500: var(--brand-500);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --navy: oklch(0.27 0.07 255);
-  --navy-deep: oklch(0.20 0.06 258);
+  --navy-deep: oklch(0.2 0.06 258);
   --slate-pro: oklch(0.45 0.02 250);
   --wa: oklch(0.68 0.17 152);
   --wa-hover: oklch(0.62 0.17 152);
+  /* brand-* kept as literal hex to match the client-provided HTML mockup exactly */
+  --brand-50: #f0f4f8;
+  --brand-100: #d9e2ec;
+  --brand-500: #334e68;
+  --brand-800: #102a43;
+  --brand-900: #0b1c2c;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -151,5 +162,97 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+/* Template-specific effects (landing hero + service detail pages)
+ * Wrapped in @layer components so Tailwind utility classes (e.g. bg-brand-900
+ * on the dark bento card) win the cascade — unlayered rules always beat
+ * layered ones regardless of source order or specificity. */
+@layer components {
+  .hero-bg {
+    /* Consultores en reunión con cliente — refuerza acompañamiento, no solo arquitectura corporativa */
+    background-image: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-title-container {
+    position: absolute;
+    inset: 1.25rem 1rem auto 1rem;
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .hero-title-container {
+      inset: 25% auto auto 5%;
+      right: auto;
+    }
+  }
+
+  .floating-object {
+    position: absolute;
+    right: -5%;
+    top: 15%;
+    width: 55%;
+    z-index: 20;
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.2));
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+  }
+
+  .bento-card {
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+  }
+
+  .service-hero-pattern {
+    background-color: #f0f4f8;
+    background-image: radial-gradient(#d9e2ec 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .sub-service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .sub-service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

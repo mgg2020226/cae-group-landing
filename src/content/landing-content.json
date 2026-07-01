@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "CAE GROUP | Soluciones Empresariales",
+    "description": "Firma de consultoría contable, tributaria, jurídica y estratégica. Revisoría fiscal, outsourcing contable, asesoría tributaria y más.",
+    "ogTitle": "CAE GROUP | Soluciones Empresariales",
+    "ogDescription": "Acompañamos a empresas y familias empresarias con servicios integrales de auditoría, impuestos, contabilidad y estrategia."
+  },
+  "nav": {
+    "logoAlt": "CAE GROUP",
+    "links": ["Servicios", "Nosotros", "Contacto"],
+    "cta": "Hablemos"
+  },
+  "hero": {
+    "title": "Estructurando",
+    "titleHighlight": "El Futuro.",
+    "subtitle": "Consultoría integral, revisoría fiscal y estrategia corporativa diseñada para trascender.",
+    "actionBar": {
+      "serviceLabel": "Necesito ayuda con",
+      "servicePlaceholder": "Selecciona un servicio...",
+      "sizeLabel": "Tamaño de empresa",
+      "sizeOptions": ["Persona Natural / Pyme", "Mediana Empresa", "Gran Empresa / Corporativo"],
+      "cta": "Agendar Cita"
+    }
+  },
+  "servicios": {
+    "eyebrow": "Portafolio Integral",
+    "title": "Soluciones de Alto Nivel",
+    "cards": [
+      {
+        "category": "Auditoría",
+        "title": "Revisoría Fiscal",
+        "description": "Servicio integral de revisoría fiscal bajo Normas Internacionales de Auditoría.",
+        "cta": "Explorar área"
+      },
+      {
+        "category": "Impuestos",
+        "title": "Asesoría Tributaria",
+        "description": "Consultoría y planeación tributaria para empresas, socios y personas naturales.",
+        "cta": "Explorar área"
+      },
+      {
+        "category": "Consultoría Estratégica",
+        "title": "Consultoría en Estrategia e Innovación",
+        "description": "Transformación empresarial mediante estrategia, innovación y tecnología.",
+        "highlights": [
+          "Estrategia Empresarial",
+          "Innovación Empresarial",
+          "Transformación Digital"
+        ],
+        "cta": "Consultar ahora"
+      },
+      {
+        "category": "Contabilidad",
+        "title": "Outsourcing y Asesoría Contable",
+        "description": "Administración integral del proceso contable y financiero.",
+        "cta": "Explorar área"
+      },
+      {
+        "category": "Legal",
+        "title": "Asesoría Jurídica Corporativa",
+        "description": "Servicios legales para empresas.",
+        "cta": "Explorar área"
+      },
+      {
+        "category": "Cumplimiento Tributario",
+        "title": "Información Exógena",
+        "cta": "Ver más"
+      },
+      {
+        "category": "Administración",
+        "title": "Back Office Administrativo",
+        "cta": "Ver más"
+      },
+      {
+        "category": "Consultoría",
+        "title": "Consultoría para Familias Empresarias",
+        "cta": "Ver más"
+      }
+    ]
+  },
+  "nosotros": {
+    "eyebrow": "Quiénes somos",
+    "title": "Una firma que combina experiencia técnica con visión estratégica.",
+    "description": "CAE GROUP nace con el propósito de ofrecer un acompañamiento cercano, riguroso y de alto valor agregado para empresas y familias empresarias en Colombia y la región.",
+    "values": [
+      "Enfoque a resultados",
+      "Cercanía con el cliente",
+      "Confidencialidad absoluta",
+      "Estándares internacionales"
+    ]
+  },
+  "contacto": {
+    "title": "¿Listo para blindar y escalar su negocio?",
+    "description": "Nuestro equipo de expertos está preparado para analizar su caso y proponer un plan de acción estructurado bajo la normativa vigente y las mejores prácticas globales.",
+    "cta": "Escríbanos por WhatsApp"
+  },
+  "footer": {
+    "logoAlt": "CAE GROUP",
+    "description": "Servicios integrales de auditoría, consultoría, impuestos y estrategia para empresas que buscan la excelencia.",
+    "serviciosHeading": "Servicios",
+    "serviciosLinks": [
+      "Revisoría Fiscal",
+      "Outsourcing y Asesoría Contable",
+      "Consultoría en Estrategia e Innovación",
+      "Asesoría Jurídica Corporativa"
+    ],
+    "contactoHeading": "Contacto",
+    "contactoItems": ["info@caegroup.com", "+57 (300) 000-0000", "Bogotá, Colombia"]
+  },
+  "whatsappFloating": {
+    "tooltip": "¡Asesoría Inmediata!"
+  },
+  "whatsappMessages": {
+    "navCta": "Hola, quisiera agendar una consulta con CAE GROUP",
+    "heroCtaDefault": "Hola, quisiera agendar una consulta con CAE GROUP",
+    "heroCtaWithService": "Hola, quisiera agendar una consulta sobre {servicio}{tamaño}",
+    "contactoCta": "Hola, me gustaría conocer más sobre los servicios de CAE Group.",
+    "floatingButton": "Hola, vengo de la página web"
+  }
+}
