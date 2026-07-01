@@ -171,13 +171,13 @@ function ServiceDetail() {
             <h4 className="text-white font-bold mb-4">Contacto</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <i className="fa-solid fa-envelope w-5" /> {CONTACT_EMAIL}
+                <i className="fa-solid fa-envelope w-5" /> {contact.email}
               </li>
               <li>
-                <i className="fa-solid fa-phone w-5" /> +{WHATSAPP}
+                <i className="fa-solid fa-phone w-5" /> +{contact.whatsapp}
               </li>
               <li>
-                <i className="fa-solid fa-location-dot w-5" /> {CONTACT_ADDRESS}
+                <i className="fa-solid fa-location-dot w-5" /> {contact.address}
               </li>
             </ul>
           </div>
