@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { services, type Service } from "../lib/services-data";
 import { useContact, buildWaUrl } from "../lib/use-contact";
+import { alliesLogos } from "../lib/allies-data";
+import { LogoCloud } from "../components/ui/logo-cloud";
 import logo from "../assets/logotipo-cae.png";
 
 export const Route = createFileRoute("/")({
@@ -607,6 +609,24 @@ function Landing() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* ALIADOS COMERCIALES */}
+        <section className="mt-24 max-w-6xl mx-auto">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <span className="text-brand-500 font-bold tracking-widest uppercase text-sm">
+              Alianzas
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-900 mt-2 mb-5">
+              Aliados comerciales
+            </h2>
+            <p className="text-slate-600">
+              Trabajamos junto a aliados estratégicos que fortalecen nuestra propuesta de valor y
+              amplían las soluciones que ofrecemos a nuestros clientes.
+            </p>
+          </div>
+
+          <LogoCloud logos={alliesLogos} />
         </section>
 
         {/* CTA SECTION */}
