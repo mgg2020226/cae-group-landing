@@ -4,6 +4,13 @@ import { services, type Service } from "../lib/services-data";
 import { useContact, buildWaUrl } from "../lib/use-contact";
 import { alliesLogos } from "../lib/allies-data";
 import { LogoCloud } from "../components/ui/logo-cloud";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 import logo from "../assets/logotipo-cae.png";
 
 export const Route = createFileRoute("/")({
@@ -261,34 +268,53 @@ function Landing() {
                 <label className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
                   Necesito ayuda con
                 </label>
-                <select
-                  value={serviceChoice}
-                  onChange={(e) => setServiceChoice(e.target.value)}
-                  className="bg-transparent font-semibold text-brand-900 outline-none cursor-pointer w-full mt-1"
-                >
-                  <option value="">Selecciona un servicio...</option>
-                  {services.map((s) => (
-                    <option key={s.id} value={s.title}>
-                      {s.title}
-                    </option>
-                  ))}
-                </select>
+                <Select value={serviceChoice} onValueChange={setServiceChoice}>
+                  <SelectTrigger className="mt-1 h-auto w-full justify-between gap-2 border-0 bg-transparent p-0 font-semibold text-brand-900 shadow-none outline-none focus:ring-0 focus:ring-offset-0 [&>span]:line-clamp-1">
+                    <SelectValue placeholder="Selecciona un servicio..." />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-2xl border-slate-200 shadow-xl">
+                    {services.map((s) => (
+                      <SelectItem
+                        key={s.id}
+                        value={s.title}
+                        className="rounded-xl text-brand-900 focus:bg-brand-50 focus:text-brand-900"
+                      >
+                        {s.title}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="px-6 py-3 md:py-4 flex-1 flex flex-col justify-center">
                 <label className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
                   Tamaño de empresa
                 </label>
-                <select
-                  value={companySize}
-                  onChange={(e) => setCompanySize(e.target.value)}
-                  className="bg-transparent font-semibold text-brand-900 outline-none cursor-pointer w-full mt-1"
-                >
-                  <option value="">Persona Natural / Pyme</option>
-                  <option>Persona Natural / Pyme</option>
-                  <option>Mediana Empresa</option>
-                  <option>Gran Empresa / Corporativo</option>
-                </select>
+                <Select value={companySize} onValueChange={setCompanySize}>
+                  <SelectTrigger className="mt-1 h-auto w-full justify-between gap-2 border-0 bg-transparent p-0 font-semibold text-brand-900 shadow-none outline-none focus:ring-0 focus:ring-offset-0 [&>span]:line-clamp-1">
+                    <SelectValue placeholder="Persona Natural / Pyme" />
+                  </SelectTrigger>
+                  <SelectContent className="rounded-2xl border-slate-200 shadow-xl">
+                    <SelectItem
+                      value="Persona Natural / Pyme"
+                      className="rounded-xl text-brand-900 focus:bg-brand-50 focus:text-brand-900"
+                    >
+                      Persona Natural / Pyme
+                    </SelectItem>
+                    <SelectItem
+                      value="Mediana Empresa"
+                      className="rounded-xl text-brand-900 focus:bg-brand-50 focus:text-brand-900"
+                    >
+                      Mediana Empresa
+                    </SelectItem>
+                    <SelectItem
+                      value="Gran Empresa / Corporativo"
+                      className="rounded-xl text-brand-900 focus:bg-brand-50 focus:text-brand-900"
+                    >
+                      Gran Empresa / Corporativo
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
 
