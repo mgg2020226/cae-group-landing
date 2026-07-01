@@ -13,7 +13,7 @@ export const services: Service[] = [
     title: "Revisoría Fiscal y Auditoría",
     category: "Auditoría",
     description:
-      "Evaluamos la información financiera y fortalecemos el sistema de control interno mediante procesos desarrollados conforme a las Normas Internacionales de Auditoría.",
+      "Evaluamos la información financiera y fortalecemos el sistema de control interno mediante procesos desarrollados conforme a la normatividad.",
     icon: "fa-solid fa-shield-halved",
     items: [
       "Revisoría Fiscal",
